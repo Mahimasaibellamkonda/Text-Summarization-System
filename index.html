@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Text Summarization System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Text Summarization System</h1>
+
+        <p class="subtitle">
+            Convert long text into a concise summary
+        </p>
+
+        <form method="POST">
+
+            <label for="text">
+                Enter Text
+            </label>
+
+            <textarea
+                id="text"
+                name="text"
+                placeholder="Paste your long text here..."
+                required>{{ text }}</textarea>
+
+            <button type="submit">
+                Summarize Text
+            </button>
+
+        </form>
+
+        {% if summary %}
+
+        <div class="result">
+
+            <h2>Summary</h2>
+
+            <p>{{ summary }}</p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
